@@ -1,25 +1,25 @@
 {
 	"schema_version": 1,
 	"quilt_loader": {
-		"group": "com.example",
-		"id": "example_mod",
+		"group": "dev.ryanccn",
+		"id": "uwuify_chat",
 		"version": "${version}",
 		"metadata": {
-			"name": "Mod Name",
-			"description": "A short description of your mod.",
+			"name": "uwuify chat",
+			"description": "uwuify the chat messages owo",
 			"contributors": {
-				"Your name here": "Owner"
+				"RyanCaoDev": "Owner"
 			},
 			"contact": {
-				"homepage": "https://example.com/",
-				"issues": "https://github.com/QuiltMC/quilt-template-mod/issues",
-				"sources": "https://github.com/QuiltMC/quilt-template-mod"
+				"homepage": "https://ryanccn.dev/",
+				"issues": "https://github.com/RyanModDev/uwuify-chat/issues",
+				"sources": "https://github.com/RyanModDev/uwuify-chat"
 			},
-			"icon": "assets/example_mod/icon.png"
+			"icon": "assets/uwuify_chat/icon.png"
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
 		"entrypoints": {
-			"init": "com.example.example_mod.ExampleMod"
+			"init": "dev.ryanccn.uwuify_chat.UwuifyChatMod"
 		},
 		"depends": [
 			{
@@ -36,5 +36,5 @@
 			}
 		]
 	},
-	"mixin": "example_mod.mixins.json"
+	"mixin": "uwuify_chat.mixins.json"
 }
