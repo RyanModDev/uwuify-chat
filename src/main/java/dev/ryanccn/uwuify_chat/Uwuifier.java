@@ -40,7 +40,17 @@ public class Uwuifier {
 	 * @return - the uwuified string
 	 */
 	public static String uwuify(String stringToUwuify) {
+        if (!stringToUwuify.startsWith("[uwu] ")) return stringToUwuify;
+
 		Random rand = new Random();
-		return stringToUwuify.toLowerCase().replaceAll("[rl]","w").replaceAll("n([aeiou])", "ny$1").replaceAll("ove", "uve").replaceAll("uck", "uwq").replaceFirst("i", "i-i").replaceFirst("(?s)(.*)" + "i-i-i", "$1" + "i-i") + ((rand.nextInt(10)) <= 2 ? " >-<" : "") + ((rand.nextInt(10)) <= 1 ? " uwu" : "");
+		return stringToUwuify
+                .toLowerCase()
+                .substring(6)
+                .replaceAll("[rl]","w")
+                .replaceAll("n([aeiou])", "ny$1")
+                .replaceAll("ove", "uve")
+                .replaceAll("uck", "uwq")
+                .replaceFirst("i", "i-i")
+                .replaceFirst("(?s)(.*)" + "i-i-i", "$1" + "i-i") + ((rand.nextInt(10)) <= 2 ? " >-<" : "") + ((rand.nextInt(10)) <= 1 ? " uwu" : "");
 	}
 }
