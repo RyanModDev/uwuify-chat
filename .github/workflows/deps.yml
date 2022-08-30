@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v2
       - name: validate gradle wrapper
         uses: gradle/wrapper-validation-action@v1
-      - uses: RyanModDev/quilted-dependabot@0.0.1
+      - uses: RyanModDev/quilted-dependabot@0.0.2
       - uses: peter-evans/create-pull-request@v4
         with:
           commit-message: 'chore(deps): update libraries'
