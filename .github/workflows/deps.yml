@@ -1,4 +1,4 @@
-name: update dependencies
+name: Update Quilt libraries
 
 on:
   schedule:
@@ -10,7 +10,7 @@ permissions:
   pull-requests: write
 
 jobs:
-  build:
+  deps:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
