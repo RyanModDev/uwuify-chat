@@ -1,0 +1,21 @@
+name: update dependencies
+
+on:
+  schedule:
+    - cron: 0 0 * * 0
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v2
+      - name: validate gradle wrapper
+        uses: gradle/wrapper-validation-action@v1
+      - uses: RyanModDev/quilted-dependabot@0.0.1
+      - uses: peter-evans/create-pull-request@v4
+        with:
+          commit-message: 'chore(deps): update libraries'
+          author: "Ryan Cao's Bot <98804099+ryanccn-bot@users.noreply.github.com>"
+          committer: "Ryan Cao's Bot <98804099+ryanccn-bot@users.noreply.github.com>"
