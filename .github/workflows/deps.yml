@@ -15,6 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: RyanModDev/quilted-dependabot@v0
+        id: uwu
       - uses: peter-evans/create-pull-request@v4
         with:
           commit-message: 'chore(deps): update libraries'
@@ -22,4 +23,4 @@ jobs:
           committer: 'github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>'
           branch: quilted-dependabot
           title: 'Update libraries'
-          body: 'because yes'
+          body: ${{ steps.uwu.outputs.changelog }}
