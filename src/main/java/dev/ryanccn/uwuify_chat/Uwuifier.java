@@ -24,33 +24,50 @@ THE SOFTWARE.
 
 package dev.ryanccn.uwuify_chat;
 
+import dev.ryanccn.uwuify_chat.config.UwuifyChatConfigManager;
+
 import java.util.Random;
 
 /**
  * This class either contains the best code or the worst code ever written
+ *
  * @author Ran
  * @author TreeCaptcha
  * @author RoostersEatYou
  */
 public class Uwuifier {
-	/**
-	 * This uwuifier makes no guarantee that every input has the same output.
-	 * Consider using uwuifySame to get the same output on each input.
-	 * @param stringToUwuify - the string to be uwuified
-	 * @return - the uwuified string
-	 */
-	public static String uwuify(String stringToUwuify) {
-        if (!stringToUwuify.startsWith("[uwu] ")) return stringToUwuify;
-
-		Random rand = new Random();
-		return stringToUwuify
+    /**
+     * This uwuifier makes no guarantee that every input has the same output.
+     * Consider using uwuifySame to get the same output on each input.
+     *
+     * @param stringToUwuify - the string to be uwuified
+     * @return - the uwuified string
+     */
+    public static String uwuify(String stringToUwuify) {
+        Random rand = new Random();
+        return stringToUwuify
                 .toLowerCase()
-                .substring(6)
-                .replaceAll("[rl]","w")
+                .replaceAll("[rl]", "w")
                 .replaceAll("n([aeiou])", "ny$1")
                 .replaceAll("ove", "uve")
                 .replaceAll("uck", "uwq")
                 .replaceFirst("i", "i-i")
                 .replaceFirst("(?s)(.*)" + "i-i-i", "$1" + "i-i") + ((rand.nextInt(10)) <= 2 ? " >-<" : "") + ((rand.nextInt(10)) <= 1 ? " uwu" : "");
-	}
+    }
+
+    /**
+     * The wrapper around `uwuify` that respects config
+     */
+    public static String wrappedUwuify(String stringToUwuify) {
+        String mode = UwuifyChatConfigManager.MODE.value();
+        String prefix = UwuifyChatConfigManager.PREFIX.value();
+
+        if (mode.equals("global")) {
+            return uwuify(stringToUwuify);
+        } else if (mode.equals("prefix") && stringToUwuify.startsWith(prefix + " ")) {
+            return uwuify(stringToUwuify.substring(prefix.length() + 1));
+        }
+
+        return stringToUwuify;
+    }
 }

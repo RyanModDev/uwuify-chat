@@ -1,40 +1,45 @@
 {
-	"schema_version": 1,
-	"quilt_loader": {
-		"group": "dev.ryanccn",
-		"id": "uwuify_chat",
-		"version": "${version}",
-		"metadata": {
-			"name": "uwuify chat",
-			"description": "uwuify the chat messages owo",
-			"contributors": {
-				"RyanCaoDev": "Owner"
-			},
-			"contact": {
-				"homepage": "https://ryanccn.dev/",
-				"issues": "https://github.com/RyanModDev/uwuify-chat/issues",
-				"sources": "https://github.com/RyanModDev/uwuify-chat"
-			},
-			"icon": "assets/uwuify_chat/icon.png"
-		},
-		"intermediate_mappings": "net.fabricmc:intermediary",
-		"entrypoints": {
-			"init": "dev.ryanccn.uwuify_chat.UwuifyChatMod"
-		},
-		"depends": [
-			{
-				"id": "quilt_loader",
-				"versions": ">=0.17.0-"
-			},
-			{
-				"id": "quilted_fabric_api",
-				"versions": ">=4.0.0-"
-			},
-			{
-				"id": "minecraft",
-				"versions": ">=1.19.2"
-			}
-		]
-	},
-	"mixin": "uwuify_chat.mixins.json"
+  "schema_version": 1,
+  "quilt_loader": {
+    "group": "dev.ryanccn",
+    "id": "uwuify_chat",
+    "version": "${version}",
+    "metadata": {
+      "name": "uwuify chat",
+      "description": "uwuify the chat messages owo",
+      "contributors": {
+        "RyanCaoDev": "Owner"
+      },
+      "contact": {
+        "homepage": "https://ryanccn.dev/",
+        "issues": "https://github.com/RyanModDev/uwuify-chat/issues",
+        "sources": "https://github.com/RyanModDev/uwuify-chat"
+      },
+      "icon": "assets/uwuify_chat/icon.png"
+    },
+    "intermediate_mappings": "net.fabricmc:intermediary",
+    "entrypoints": {
+      "init": "dev.ryanccn.uwuify_chat.UwuifyChatMod",
+      "modmenu": "dev.ryanccn.uwuify_chat.config.ModMenuStuff"
+    },
+    "depends": [
+      {
+        "id": "quilt_loader",
+        "versions": ">=0.17.0-"
+      },
+      {
+        "id": "quilted_fabric_api",
+        "versions": ">=4.0.0-"
+      },
+      {
+        "id": "cloth-config",
+        "versions": ">=8.0.0"
+      },
+      {
+        "id": "minecraft",
+        "versions": ">=1.19.2"
+      }
+    ]
+  },
+  "mixin": "uwuify_chat.mixins.json"
 }

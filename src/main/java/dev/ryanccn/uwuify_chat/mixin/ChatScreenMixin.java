@@ -10,8 +10,8 @@ import org.spongepowered.asm.mixin.injection.ModifyArg;
 
 @Mixin(ChatScreen.class)
 public class ChatScreenMixin {
-	@ModifyArg(method="keyPressed", at=@At(value="INVOKE", target="Lnet/minecraft/client/gui/screen/ChatScreen;method_44056(Ljava/lang/String;Z)Z"), index=0)
-	private String uwuTheMessage(String orig) {
-		return Uwuifier.uwuify(orig);
-	}
+    @ModifyArg(method = "keyPressed", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/screen/ChatScreen;handleChatInput(Ljava/lang/String;Z)Z"), index = 0)
+    private String uwuTheMessage(String orig) {
+        return Uwuifier.wrappedUwuify(orig);
+    }
 }
