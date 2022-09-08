@@ -6,7 +6,6 @@ import me.shedaniel.clothconfig2.api.ConfigEntryBuilder;
 
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.text.Text;
-import org.quiltmc.config.api.annotations.Comment;
 
 import java.util.List;
 
@@ -15,25 +14,25 @@ public class ConfigScreen {
         ConfigBuilder builder = ConfigBuilder
                 .create()
                 .setParentScreen(parent)
-                .setTitle(Text.of("uwuify chat config"));
+                .setTitle(Text.translatable("dev.ryanccn.uwuify_chat.config.title"));
 
-        ConfigCategory general = builder.getOrCreateCategory(Text.of("general"));
+        ConfigCategory general = builder.getOrCreateCategory(Text.translatable("dev.ryanccn.uwuify_chat.config.general"));
         ConfigEntryBuilder entryBuilder = builder.entryBuilder();
 
         general.addEntry(
                 entryBuilder
-                        .startSelector(Text.of("Mode"), List.of("global", "prefix").toArray(), UwuifyChatConfigManager.MODE.value())
+                        .startSelector(Text.translatable("dev.ryanccn.uwuify_chat.config.mode.name"), List.of("global", "prefix").toArray(), UwuifyChatConfigManager.MODE.value())
                         .setDefaultValue("prefix")
-                        .setTooltip(Text.of(UwuifyChatConfigManager.MODE.metadata(Comment.TYPE).iterator().next()))
+                        .setTooltip(Text.translatable("dev.ryanccn.uwuify_chat.config.mode.tooltip"))
                         .setSaveConsumer(newValue -> UwuifyChatConfigManager.MODE.setValue((String) newValue, true))
                         .build()
         );
 
         general.addEntry(
                 entryBuilder
-                        .startTextField(Text.of("Prefix"), UwuifyChatConfigManager.PREFIX.value())
+                        .startTextField(Text.translatable("dev.ryanccn.uwuify_chat.config.prefix.name"), UwuifyChatConfigManager.PREFIX.value())
                         .setDefaultValue("[uwu]")
-                        .setTooltip(Text.of(UwuifyChatConfigManager.PREFIX.metadata(Comment.TYPE).iterator().next()))
+                        .setTooltip(Text.translatable("dev.ryanccn.uwuify_chat.config.prefix.tooltip"))
                         .setSaveConsumer(newValue -> UwuifyChatConfigManager.PREFIX.setValue(newValue, true))
                         .build()
         );

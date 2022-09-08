@@ -1,0 +1,8 @@
+{
+  "dev.ryanccn.uwuify_chat.config.title": "uwuify chat config",
+  "dev.ryanccn.uwuify_chat.config.general": "General",
+  "dev.ryanccn.uwuify_chat.config.mode.name": "Mode",
+  "dev.ryanccn.uwuify_chat.config.mode.tooltip": "The mode to use",
+  "dev.ryanccn.uwuify_chat.config.prefix.name": "Prefix",
+  "dev.ryanccn.uwuify_chat.config.prefix.tooltip": "Prefix to use (without a trailing space in settings, but *with* trailing space when chatting)"
+}

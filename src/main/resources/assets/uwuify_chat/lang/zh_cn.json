@@ -1,0 +1,8 @@
+{
+  "dev.ryanccn.uwuify_chat.config.title": "uwuify chat 设置",
+  "dev.ryanccn.uwuify_chat.config.general": "通用",
+  "dev.ryanccn.uwuify_chat.config.mode.name": "模式",
+  "dev.ryanccn.uwuify_chat.config.mode.tooltip": "uwuify chat 使用的模式",
+  "dev.ryanccn.uwuify_chat.config.prefix.name": "前缀",
+  "dev.ryanccn.uwuify_chat.config.prefix.tooltip": "prefix模式下使用的激活前缀，不含最后的空格（实际使用时需要）"
+}
