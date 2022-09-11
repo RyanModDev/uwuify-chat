@@ -57,8 +57,12 @@ public class Uwuifier {
 
     /**
      * The wrapper around `uwuify` that respects config
+     *
+     * @author Ryan Cao
      */
     public static String wrappedUwuify(String stringToUwuify) {
+        if (stringToUwuify.startsWith("/")) return stringToUwuify;
+
         String mode = UwuifyChatConfigManager.MODE.value();
         String prefix = UwuifyChatConfigManager.PREFIX.value();
 
