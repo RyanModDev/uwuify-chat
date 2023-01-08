@@ -1,10 +1,10 @@
 [versions]
 minecraft = "1.19.2"
 quilt_mappings = "1.19.2+build.21"
-quilt_loader = "0.17.6"
+quilt_loader = "0.18.1-beta.27"
 quilted_fabric_api = "4.0.0-beta.7+0.59.0-1.19.2"
 cloth_config = "8.1.77"
-mod_menu = "4.0.6"
+mod_menu = "5.0.2"
 
 [libraries.minecraft]
 module = "com.mojang:minecraft"
